@@ -55,15 +55,16 @@
         // Обработка клика по ссылке
         document.querySelector("#theme_toggle").addEventListener("click", (event) => {
 
-            event.preventDefault(); // отменяет другие обработчики
+            event.preventDefault(); // отменяет другие обработчики в данном случае отменяет переход по ссылке
 
             document.querySelector('body').classList.toggle('dark_theme'); // classList.toggle  — удаляет существующий класс или добавляет новый. 
 
             // ClassList – объект с методами add/remove/toggle/contains, удобно для управления отдельными классами.
+            // Метод contains проверяет присутсвует ли класс dark_theme (возвращает либо true либо false)
             if (document.querySelector('body').classList.contains('dark_theme')) {
-                event.target.textContent = 'Светлая тема';
+                event.target.textContent = 'Светлая тема'; // меняет текст в элементе с классом dark_theme на Светлая тема
             } else {
-                event.target.textContent = 'Темная тема';
+                event.target.textContent = 'Темная тема'; // если нет класса dark_theme то ставим текст Темная тема
             }
         });
 
