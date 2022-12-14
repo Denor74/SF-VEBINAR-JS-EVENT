@@ -58,14 +58,16 @@
             }
         ];
 
-        // функция принимает на вход строки c email и паролем
-        // делает хэш от пароля и ищет в массиве польователей
+        // функция attempt (встроенная функция во фреймворках)принимает на вход строки c email и паролем
+        // btoa делает хэш от пароля и ищет в массиве польователей помощью метода findIndex ищет порядковый элемента который содержится в 
         // пользователя с таким email и хэшем пароля
-        // если находит, возвращает true иначе false
+        
         function attempt(email, password) {
             const hashedPassword = btoa(password);
             const result = users.findIndex((user) => {
-                return (user.email === email) && (user.password === hashedPassword);
+                // debuger; - при включенной консоли приостанавливает выполнение кода и можно получить доступ к переменным 
+                // если находит, возвращает true иначе false если true то мы получим индекс элемента если false то получаем -1
+                return (user.email === email) && (user.password === hashedPassword); 
             });
             return result >= 0;
         }

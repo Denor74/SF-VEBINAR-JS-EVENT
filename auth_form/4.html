@@ -86,6 +86,7 @@
                 if(attempt(email, password)) {
                     document.querySelector("#auth_success").classList.toggle("d-none");
 
+                    // Сбрасывем данные с формы после авторизации
                     event.target.reset();
 
                     setTimeout(() => {

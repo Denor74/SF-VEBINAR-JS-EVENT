@@ -57,8 +57,10 @@
 
             event.preventDefault(); // отменяет другие обработчики в данном случае отменяет переход по ссылке
 
-            document.querySelector('body').classList.toggle('dark_theme'); // classList.toggle  — удаляет существующий класс или добавляет новый. 
-
+            document.querySelector('body').classList.toggle('dark_theme'); 
+            // classList.toggle  — удаляет существующий класс или добавляет новый. Если класс у элемента есть, 
+            // метод classList.toggle ведёт себя как classList.remove и класс у элемента убирает. 
+            // А если указанного класса у элемента нет, то classList.toggle, как и classList.add, добавляет элементу этот класс.
             // ClassList – объект с методами add/remove/toggle/contains, удобно для управления отдельными классами.
             // Метод contains проверяет присутсвует ли класс dark_theme (возвращает либо true либо false)
             if (document.querySelector('body').classList.contains('dark_theme')) {
